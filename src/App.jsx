@@ -5,7 +5,8 @@ import { rgbToHex } from "./utils/rgbToHex";
 
 function App() {
   const [colors, setColors] = useState([]);
-  useEffect(() => {
+  const getNewPalette = () => {
+    setColors([]);
     getPalette((res) => {
       let newColors = [];
       res.forEach((el) => {
@@ -13,6 +14,9 @@ function App() {
       });
       setColors(newColors);
     });
+  };
+  useEffect(() => {
+    getNewPalette();
   }, []);
   return (
     <main className="w-screen min-h-screen bg-gradient-to-tr from-[#3F0071] to-[#FB2576]">
@@ -29,6 +33,14 @@ function App() {
         )}
         {colors.length > 0 &&
           colors.map((el, index) => <ColorCard key={index} hex={el} />)}
+      </div>
+      <div className="mx-auto w-fit mt-12">
+        <button
+          onClick={getNewPalette}
+          className="bg-[#0002A1] text-white py-4 px-20 rounded-3xl font-bold"
+        >
+          Generate Palette
+        </button>
       </div>
       <div className="h-16"></div>
     </main>
