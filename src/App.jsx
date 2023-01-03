@@ -9,11 +9,11 @@ function App() {
       </h1>
       {/* color cards container */}
       <div className="mx-auto w-fit flex flex-row gap-6 flex-wrap items-center justify-center mt-12">
-        <ColorCard />
-        <ColorCard />
-        <ColorCard />
-        <ColorCard />
-        <ColorCard />
+        <ColorCard hex="#bbbbbb" />
+        <ColorCard hex="#aaaaaa" />
+        <ColorCard hex="#000000" />
+        <ColorCard hex="#123a24" />
+        <ColorCard hex="#ffaa99" />
       </div>
       <div className="h-16"></div>
     </main>
